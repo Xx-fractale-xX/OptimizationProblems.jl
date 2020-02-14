@@ -25,7 +25,7 @@ function hs9(args...)
     sin(π * x[1] / 12) * cos(π * x[2] / 16)
   )
 
-  @constraint(
+  @NLconstraint(
     nlp,
     constr1,
     4 * x[1] - 3 * x[2] == 0

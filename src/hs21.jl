@@ -21,7 +21,7 @@ function hs21(args...)
   uvar = [ 50, 50]
   @variable(nlp, lvar[i] <= x[i=1:2] <= uvar[i], start = -1)
 
-  @constraint(nlp, 10*x[1] - x[2] - 10 >= 0)
+  @NLconstraint(nlp, 10*x[1] - x[2] - 10 >= 0)
 
   @NLobjective(
     nlp,

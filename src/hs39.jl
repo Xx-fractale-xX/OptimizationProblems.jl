@@ -20,7 +20,7 @@ function hs39(args...)
   nlp  = Model()
   @variable(nlp, x[i=1:4], start = 2)
 
-  @objective(
+  @NLobjective(
     nlp,
     Min,
     -x[1]

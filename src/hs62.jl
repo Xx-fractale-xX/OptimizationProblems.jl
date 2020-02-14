@@ -20,7 +20,7 @@ function hs62(args...)
   x0   = [0.7, 0.2, 0.1]
   @variable(nlp, 0 <= x[i=1:3] <= 1, start = x0[i])
 
-  @constraint(nlp, x[1] + x[2] + x[3] - 1 == 0)
+  @NLconstraint(nlp, x[1] + x[2] + x[3] - 1 == 0)
 
   @NLobjective(
     nlp,

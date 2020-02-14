@@ -22,7 +22,7 @@ function hs54(args...)
   uvar = [2e4,  10, 1e7, 20,    1, 2e8]
   @variable(nlp, lvar[i] <= x[i=1:6] <= uvar[i], start = x0[i])
 
-  @constraint(nlp, x[1] + 3*x[2] == 0)
+  @NLconstraint(nlp, x[1] + 3*x[2] == 0)
 
   @NLexpression(nlp, h, 
   (((x[1] - 1e4)^2)/6.4e7 + (x[1] - 1e4)*(x[2] - 1)/2e4 + (x[2] - 1)^2)/0.96

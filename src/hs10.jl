@@ -20,7 +20,7 @@ function hs10(args...)
   x0   = [-10,    10]
   @variable(nlp, x[i=1:2], start = x0[i])
 
-  @objective(
+  @NLobjective(
     nlp,
     Min,
     x[1] - x[2]

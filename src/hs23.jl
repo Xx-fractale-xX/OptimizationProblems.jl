@@ -20,7 +20,7 @@ function hs23(args...)
   x0   = [  3,  1]
   @variable(nlp, -50 <= x[i=1:2] <= 50, start = x0[i])
 
-  @constraint(nlp, x[1] + x[2] - 1 >= 0)
+  @NLconstraint(nlp, x[1] + x[2] - 1 >= 0)
   @NLconstraint(nlp, x[1]^2 + x[2]^2 - 1 >= 0)
   @NLconstraint(nlp, 9*x[1]^2 + x[2]^2 - 9 >= 0)
   @NLconstraint(nlp, x[1]^2 - x[2] >= 0)

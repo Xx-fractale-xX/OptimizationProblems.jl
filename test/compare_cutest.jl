@@ -21,7 +21,7 @@ cutest_problem(name) = CUTEst.CUTEstModel(name)
 function optpr_problem(name, args...)
     fmodel = getfield(OptimizationProblems, Symbol(name))
     model = fmodel(args...)
-    return MathProgNLPModel(model)
+    return MathOptNLPModel(model)
 end
 
 function compute_status(probname; showvals=false)
@@ -31,7 +31,7 @@ function compute_status(probname; showvals=false)
     isok = false
     if isa(optnlp.meta.x0, AbstractVector)
         n = cutenlp.meta.nvar
-        if optnlp.meta.nvar != n
+        if optnlp.meta.nvar ≠ n
             samenvars = false
             optnlp = optpr_problem(probname, n)
         end

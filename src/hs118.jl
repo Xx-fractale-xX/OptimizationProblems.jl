@@ -27,15 +27,15 @@ function hs118(args...)
   c = cos(0.25)
 
   for j = 1:4
-    @constraint(nlp, 0 <= x[3*j+1] - x[3*j-2] + 7 <= 13)
-    @constraint(nlp, 0 <= x[3*j+2] - x[3*j-1] + 7 <= 13)
-    @constraint(nlp, 0 <= x[3*j+3] - x[3*j]   + 7 <= 14)
+    @NLconstraint(nlp, 0 <= x[3*j+1] - x[3*j-2] + 7 <= 13)
+    @NLconstraint(nlp, 0 <= x[3*j+2] - x[3*j-1] + 7 <= 13)
+    @NLconstraint(nlp, 0 <= x[3*j+3] - x[3*j]   + 7 <= 14)
   end
-  @constraint(nlp, x[1]  + x[2]  + x[3]  - 60  >= 0)
-  @constraint(nlp, x[4]  + x[5]  + x[6]  - 70  >= 0)
-  @constraint(nlp, x[7]  + x[8]  + x[9]  - 100 >= 0)
-  @constraint(nlp, x[10] + x[11] + x[12] - 50  >= 0)
-  @constraint(nlp, x[13] + x[14] + x[15] - 85  >= 0)
+  @NLconstraint(nlp, x[1]  + x[2]  + x[3]  - 60  >= 0)
+  @NLconstraint(nlp, x[4]  + x[5]  + x[6]  - 70  >= 0)
+  @NLconstraint(nlp, x[7]  + x[8]  + x[9]  - 100 >= 0)
+  @NLconstraint(nlp, x[10] + x[11] + x[12] - 50  >= 0)
+  @NLconstraint(nlp, x[13] + x[14] + x[15] - 85  >= 0)
 
   @NLobjective(
     nlp,

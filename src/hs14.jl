@@ -21,7 +21,7 @@ function hs14(args...)
 
   @NLconstraint(nlp, 0.25*x[1]^2 + x[2]^2 - 1 <= 0)
 
-  @constraint(nlp, x[1] - 2*x[2] + 1 == 0)
+  @NLconstraint(nlp, x[1] - 2*x[2] + 1 == 0)
 
   @NLobjective(
     nlp,

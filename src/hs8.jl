@@ -20,7 +20,7 @@ function hs8(args...)
   x0   = [2.0, 1.0]
   @variable(nlp, x[i=1:2], start = x0[i])
 
-  @objective(
+  @NLobjective(
     nlp,
     Min,
     -1

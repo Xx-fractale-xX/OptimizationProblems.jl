@@ -19,9 +19,9 @@ function hs53(args...)
   nlp  = Model()
   @variable(nlp, -10 <= x[i=1:5] <= 10, start = 2)
 
-  @constraint(nlp, x[1] + 3*x[2] == 0)
-  @constraint(nlp, x[3] + x[4] - 2*x[5] == 0)
-  @constraint(nlp, x[2] - x[5] == 0)
+  @NLconstraint(nlp, x[1] + 3*x[2] == 0)
+  @NLconstraint(nlp, x[3] + x[4] - 2*x[5] == 0)
+  @NLconstraint(nlp, x[2] - x[5] == 0)
 
   @NLobjective(
     nlp,

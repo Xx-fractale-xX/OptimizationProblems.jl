@@ -46,7 +46,7 @@ function hs86(args...)
   e = [-15, -27, -36, -18, -12]
 
   for i = 1:10
-    @constraint(nlp, sum(a[i,j]*x[j] for j=1:5) - b[i] >= 0)
+    @NLconstraint(nlp, sum(a[i,j]*x[j] for j=1:5) - b[i] >= 0)
   end
 
   @NLobjective(

@@ -20,7 +20,7 @@ function hs28(args...)
   x0   = [-4, 1, 1]
   @variable(nlp, x[i=1:3], start = x0[i])
 
-  @constraint(nlp, x[1] + 2*x[2] + 3*x[3] - 1 == 0)
+  @NLconstraint(nlp, x[1] + 2*x[2] + 3*x[3] - 1 == 0)
 
   @NLobjective(
     nlp,

@@ -20,7 +20,7 @@ function hs36(args...)
   uvar = [20, 11, 42]
   @variable(nlp, 0 <= x[i=1:3] <= uvar[i], start = 10)
 
-  @constraint(nlp, -72 + x[1] + 2*x[2] + 2*x[3] <= 0)
+  @NLconstraint(nlp, -72 + x[1] + 2*x[2] + 2*x[3] <= 0)
 
   @NLobjective(
     nlp,

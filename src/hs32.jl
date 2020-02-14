@@ -21,7 +21,7 @@ function hs32(args...)
   @variable(nlp, x[i=1:3] >= 0, start = x0[i])
 
   @NLconstraint(nlp, 6*x[2] + 4*x[3] - x[1]^3 - 3 >= 0)
-  @constraint(nlp, -1 + x[1] + x[2] + x[3] == 0)
+  @NLconstraint(nlp, -1 + x[1] + x[2] + x[3] == 0)
 
   @NLobjective(
     nlp,

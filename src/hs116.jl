@@ -29,10 +29,10 @@ function hs116(args...)
   e = 0.975
   f = 0.00975
 
-  @constraint(nlp, x[3] - x[2] >= 0)
-  @constraint(nlp, x[2] - x[1] >= 0)
-  @constraint(nlp, 1 - a * x[7] + a * x[8] >= 0)
-  @constraint(nlp, x[11] + x[12] + x[13] >= 50)
+  @NLconstraint(nlp, x[3] - x[2] >= 0)
+  @NLconstraint(nlp, x[2] - x[1] >= 0)
+  @NLconstraint(nlp, 1 - a * x[7] + a * x[8] >= 0)
+  @NLconstraint(nlp, x[11] + x[12] + x[13] >= 50)
   @NLconstraint(nlp, x[13] - b * x[10] + c * x[3] * x[10] >= 0)
   @NLconstraint(nlp, x[5] - d * x[2] - e * x[2] * x[5] + f * x[2]^2 >= 0)
   @NLconstraint(nlp, x[6] - d * x[3] - e * x[3] * x[6] + f * x[3]^2 >= 0)
@@ -43,9 +43,9 @@ function hs116(args...)
   @NLconstraint(nlp, 1 - a * (x[2] * x[9] + x[5] * x[8] - x[1] * x[8] - x[6] * x[9]) - x[5] - x[6] >= 0)
   @NLconstraint(nlp, x[2] * x[9] - x[3] * x[10] - x[6] * x[9] - 500 * x[2] + 500 * x[6] + x[2] * x[10] >= 0)
   @NLconstraint(nlp, x[2] - 0.9 - a * (x[2] * x[10] - x[3] * x[10]) >= 0)
-  @constraint(nlp, x[11] + x[12] + x[13] <= 250)
+  @NLconstraint(nlp, x[11] + x[12] + x[13] <= 250)
 
-  @objective(
+  @NLobjective(
     nlp,
     Min,
     x[11] + x[12] + x[13]

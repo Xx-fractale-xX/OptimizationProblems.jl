@@ -19,8 +19,8 @@ function hs61(args...)
   nlp  = Model()
   @variable(nlp, x[i=1:3], start = 0)
 
-  @constraint(nlp, 3*x[1] - 2*x[2]^2 -  7 == 0)
-  @constraint(nlp, 4*x[1] -   x[3]^2 - 11 == 0)
+  @NLconstraint(nlp, 3*x[1] - 2*x[2]^2 -  7 == 0)
+  @NLconstraint(nlp, 4*x[1] -   x[3]^2 - 11 == 0)
 
   @NLobjective(
     nlp,

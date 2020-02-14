@@ -29,7 +29,7 @@ function hs95(args...)
   @NLconstraint(nlp, -273*x[2] - 70*x[4] - 819*x[5] + 26000*x[4]*x[5] >= b[3])
   @NLconstraint(nlp, 159.9*x[1] - 311*x[2] + 587*x[4] + 391*x[5] + 2198*x[6] - 14000*x[1]*x[6] >= b[4])
 
-  @objective(
+  @NLobjective(
     nlp,
     Min,
     4.3*x[1] + 31.8*x[2] + 63.3*x[3] + 15.8*x[4] + 68.5*x[5] + 4.7*x[6]

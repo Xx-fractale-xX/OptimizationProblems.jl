@@ -24,7 +24,7 @@ function hs66(args...)
   @NLconstraint(nlp, x[2] - exp(x[1]) ≥ 0)
   @NLconstraint(nlp, x[3] - exp(x[2]) ≥ 0)
 
-  @objective(
+  @NLobjective(
     nlp,
     Min,
     0.2*x[3] - 0.8*x[1]

@@ -29,7 +29,7 @@ function hs106(args...)
   @NLconstraint(nlp, x[2]*x[7] - 1250*x[5] - x[2]*x[4] + 1250*x[4] ≥ 0)
   @NLconstraint(nlp, x[3]*x[8] - 1250000 - x[3]*x[5] + 2500*x[5] ≥ 0)
 
-  @objective(
+  @NLobjective(
     nlp,
     Min,
     x[1] + x[2] + x[3]

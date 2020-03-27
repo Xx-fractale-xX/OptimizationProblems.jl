@@ -45,7 +45,7 @@ function hs116(args...)
   @NLconstraint(nlp, x[2] - 0.9 - a * (x[2] * x[10] - x[3] * x[10]) ≥ 0)
   @constraint(nlp, x[11] + x[12] + x[13] ≤ 250)
 
-  @objective(
+  @NLobjective(
     nlp,
     Min,
     x[11] + x[12] + x[13]

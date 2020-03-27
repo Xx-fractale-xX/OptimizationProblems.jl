@@ -24,7 +24,7 @@ function hs73(args...)
   - 1.645*sqrt(0.28x[1]^2 + 0.19*x[2]^2 + 20.5*x[3]^2 + 0.62x[4]^2) ≥ 0)
   @constraint(nlp, x[1] + x[2] + x[3] + x[4] - 1 == 0)
 
-  @objective(
+  @NLobjective(
     nlp,
     Min,
     24.55*x[1] + 26.75*x[2] + 39*x[3] + 40.50*x[4]
